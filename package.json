@@ -11,11 +11,8 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-<<<<<<< HEAD
     "@radix-ui/react-alert-dialog": "^1.1.2",
     "@radix-ui/react-slot": "^1.1.0",
-=======
->>>>>>> 7dbd109a9e4711f774944e096ae3c2457ff3408e
     "axios": "^1.7.7",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
