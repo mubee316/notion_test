@@ -18,7 +18,6 @@
   <script setup lang="ts">
   import { PropType } from 'vue';
   
-  // Props to accept photos from parent component
   const props = defineProps({
     photos:{ 
       type: Array as PropType<any[]>,
@@ -28,7 +27,6 @@
 
   console.log('imageGrid photos:', props.photos);
   
-  // Function to randomize grid item size
   const getRandomSize = (): string => {
     const sizes = ['row-span-2', 'row-span-1'];
     return sizes[Math.floor(Math.random() * sizes.length)];

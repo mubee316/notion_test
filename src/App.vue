@@ -1,6 +1,5 @@
 <template>
   <div class="bg-gray-200 py-10 flex flex-col items-center">
-    <!-- Search Section -->
 
     <div class="flex flex-col items-center w-full px-4 sm:flex-row sm:justify-center sm:px-0 mb-10">
       <input 
@@ -11,10 +10,8 @@
       />
     </div>
 
-    <!-- Loading Skeleton Component -->
     <SkeletonLoader v-if="loading"  class="bg-white"/>
 
-    <!-- Image Grid Component -->
     <ImageGrid v-else :photos="results" class="bg-white"/>
     <LandingImage  v-if="!search"  :photos="africanPhotos"  class="bg-white"/>
   </div>
@@ -35,7 +32,6 @@ const africanPhotos = ref<any[]>([]);
 const loading = ref<boolean>(false); 
 
 
-// API call to fetch photos
 const searchPhotos = async () => {
   if (!search.value) {
     results.value = []; 
@@ -55,12 +51,11 @@ const searchPhotos = async () => {
     });
     results.value = response.data.results;
 
-    await new Promise((resolve) => setTimeout(resolve, 2000)); // Simulate loading time
+    await new Promise((resolve) => setTimeout(resolve, 2000)); 
 
 
   } catch (error) {
     console.error('Error fetching data:', error);
-    // Optionally, you could show a user-friendly error message here
   } finally {
     loading.value = false; 
   }
@@ -79,7 +74,6 @@ const fetchAfricanPhotos = async () => {
     console.log( 'African Photos:', africanPhotos.value);
   } catch (error) {
     console.error('Error fetching data:', error);
-    // Optionally, you could show a user-friendly error message here
   }
 };
 
@@ -88,6 +82,4 @@ onMounted(() => {
 });
 </script>
 
-<style scoped>
-/* Add any additional styling if necessary */
-</style>
+
