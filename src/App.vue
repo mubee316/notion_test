@@ -80,6 +80,8 @@ const fetchAfricanPhotos = async () => {
 onMounted(() => {
   fetchAfricanPhotos();
 });
+
+
 </script>
 
 
